@@ -9,7 +9,7 @@ resource "aws_key_pair" "my_key" {
 
 resource "aws_instance" "instance1" {
   ami = "${var.ami}"
-  instance_type = "t2.micro"
+  instance_type = "m1.small"
   subnet_id = "${aws_subnet.public-subnet.id}"
   key_name = "${aws_key_pair.my_key.key_name}"
   associate_public_ip_address = true
